@@ -46,4 +46,4 @@ L’objectif est de digitaliser et simplifier le processus de réservation et de
 
 ### 1️⃣ Cloner le projet
 ```bash
-git clone https://github.com/votre-username/nom-du-repo.git
+git clone https://github.com/Yessinktari/gestion-Hotels.git
