@@ -1,0 +1,766 @@
+/* Variables */
+:root {
+  --primary-color: #1a237e;
+  --secondary-color: #3949ab;
+  --accent-color: #5c6bc0;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --border-color: #e0e0e0;
+  --success-color: #4caf50;
+  --error-color: #f44336;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-gray);
+}
+
+/* Conteneur principal du header */
+.header-container {
+  width: 100%;
+  background-color: #fff;
+  padding: 30px 0;
+  /* Augmentation du padding pour un header plus grand */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  /* Ombre portée plus grande */
+  position: relative;
+  /* Pour gérer l'animation des éléments internes */
+}
+
+/* Le header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  /* Plus de padding pour un espacement plus large */
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Conteneur du logo et du menu */
+.login-form {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  /* Espacement élargi entre le logo et le menu */
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo */
+.login-form img {
+  max-width: 120px;
+  /* Logo un peu plus grand */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.login-form img:hover {
+  transform: scale(1.15);
+  /* L'agrandissement du logo au survol est légèrement plus prononcé */
+}
+
+/* Style du menu de navigation */
+.nav-pills {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  /* Augmenter l'espacement entre les éléments du menu */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* Police de caractères moderne et lisible */
+  background-color: #f9f8f6;
+  /* Fond légèrement gris pour le contraste */
+}
+
+.nav-link {
+  font-size: 18px;
+  /* Augmenter la taille du texte */
+  font-weight: 600;
+  /* Augmenter l'épaisseur de la police pour plus de présence */
+  color: #333;
+  text-decoration: none;
+  padding: 14px 25px;
+  /* Plus de padding pour une taille de bouton plus grande */
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Effet au survol du lien */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  /* Augmenter la hauteur de la ligne sous le lien */
+  background-color: #0f27af;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-link:hover {
+  color: #18064d;
+  /* Changer la couleur du texte au survol */
+}
+
+/* Menu déroulant "Mon compte" */
+.mon-compte-link {
+  padding: 15px;
+  font-size: 16px;
+  /* Plus grande taille de police */
+  font-weight: 600;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mon-compte-link:hover,
+.mon-compte-link:focus {
+  border-color: #010a54;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+  background-color: #f1faff;
+}
+
+/* Repositionner le formulaire pour les petits écrans */
+.custom-form {
+  display: inline-block;
+  margin-left: 30px;
+  /* Espacement plus large pour une meilleure disposition */
+}
+
+/* Effet d'animation sur tout le header */
+.header-container {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Animation d'entrée pour le header */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Pour les petits écrans, réduire les espaces */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 25px 0;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .login-form {
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .nav-pills {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mon-compte-link {
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+
+
+
+/* Container principal */
+.profile-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* En-tête du profil */
+.profile-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.profile-avatar {
+  font-size: 5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.profile-header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Alertes */
+.alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: var(--success-color);
+  border: 1px solid #c8e6c9;
+}
+
+.alert-error {
+  background-color: #ffebee;
+  color: var(--error-color);
+  border: 1px solid #ffcdd2;
+}
+
+/* Sections du profil */
+.profile-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.profile-section {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.section-header i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.section-header h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+/* Formulaire */
+.profile-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.form-label i {
+  color: var(--primary-color);
+}
+
+.form-control {
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+}
+
+.form-control[readonly] {
+  background-color: var(--light-gray);
+  cursor: not-allowed;
+}
+
+/* Bouton de mise à jour */
+.btn-update {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-update:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Section des réservations */
+.reservations-list {
+  min-height: 200px;
+}
+
+.no-reservations {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.no-reservations i {
+  font-size: 4rem;
+  color: var(--border-color);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.no-reservations p {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-content {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-pills {
+    display: none;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .profile-header h1 {
+    font-size: 2rem;
+  }
+
+  .form-control {
+    padding: 0.6rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-section {
+  animation: fadeIn 0.5s ease-out;
+}
+
+
+
+
+/* Footer Styling */
+.footer-container {
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  /* Même fond blanc que le header */
+  box-shadow: 0 -4px 6px rgba(255, 255, 255, 0.1);
+  /* Ombre en haut pour démarquer le footer */
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Footer Navigation */
+.footer-container .nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-container .nav-item {
+  list-style: none;
+}
+
+.footer-container .nav-link {
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 255);
+  color: #030637;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Copyright Text Styling */
+.footer-container p {
+  margin-top: 10px;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Styles pour les cartes de réservation */
+.reservation-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.reservation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.reservation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.reservation-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.reservation-header i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  background: var(--light-gray);
+  padding: 1rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.reservation-card:hover .reservation-header i {
+  transform: scale(1.1);
+  background: var(--primary-color);
+  color: white;
+}
+
+.reservation-header h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.reservation-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--light-gray);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateX(5px);
+}
+
+.detail-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  width: 25px;
+  text-align: center;
+}
+
+.detail-item span {
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Style pour le statut de la réservation */
+.reservation-status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-confirmed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-pending {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+
+.status-cancelled {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Style pour le prix */
+.price-tag {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Style pour les dates */
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.date-range i {
+  color: var(--primary-color);
+}
+
+/* Style pour les spécifications */
+.specifications {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.specifications i {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+/* Animation pour les cartes de réservation */
+.reservation-card {
+  animation: slideIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.reservation-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.reservation-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive pour les cartes de réservation */
+@media (max-width: 768px) {
+  .reservation-card {
+    padding: 1.5rem;
+  }
+
+  .reservation-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .reservation-details {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-item {
+    padding: 0.8rem;
+  }
+
+  .detail-item i {
+    font-size: 1.1rem;
+  }
+
+  .detail-item span {
+    font-size: 0.9rem;
+  }
+}
+
+/* Style pour les boutons d'action */
+.reservation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 15px;
+  margin-bottom: 25px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-payer {
+  background: linear-gradient(to right, #045a06, #05d728);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(3, 95, 64, 0.2);
+}
+
+.btn-cancel {
+  background: linear-gradient(to right, #dc3545, #c82333);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(220, 53, 69, 0.2);
+}
+
+.btn-payer:hover, .btn-cancel:hover {
+  transform: translateY(-2px);
+}
+
+.btn-payer:hover {
+  background: linear-gradient(to right, #44c823, #84ac0a);
+  box-shadow: 0 4px 10px rgba(4, 129, 27, 0.3);
+}
+
+.btn-cancel:hover {
+  background: linear-gradient(to right, #c82333, #bd2130);
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+}
+
+.btn-payer:active, .btn-cancel:active {
+  transform: translateY(0);
+}
+
+.btn-payer:active {
+  box-shadow: 0 2px 5px rgba(141, 218, 10, 0.2);
+}
+
+.btn-cancel:active {
+  box-shadow: 0 2px 5px rgba(220, 53, 69, 0.2);
+}
+
+.btn-payer i, .btn-cancel i {
+  font-size: 0.9rem;
+}

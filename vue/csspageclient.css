@@ -1,0 +1,1274 @@
+/* Conteneur principal du header */
+.header-container {
+  width: 100%;
+  background-color: #fff;
+  padding: 30px 0;
+  /* Augmentation du padding pour un header plus grand */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  /* Ombre portée plus grande */
+  position: relative;
+  /* Pour gérer l'animation des éléments internes */
+}
+
+
+/* Le header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  /* Plus de padding pour un espacement plus large */
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Conteneur du logo et du menu */
+.login-form {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  /* Espacement élargi entre le logo et le menu */
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo */
+.login-form img {
+  max-width: 80px;
+  border-radius: 50%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.login-form img:hover {
+  transform: scale(1.15);
+  /* L'agrandissement du logo au survol est légèrement plus prononcé */
+}
+
+/* Style du menu de navigation */
+.nav-pills {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  /* Augmenter l'espacement entre les éléments du menu */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* Police de caractères moderne et lisible */
+  background-color: #f9f8f6;
+  /* Fond légèrement gris pour le contraste */
+}
+
+.nav-link {
+  font-size: 18px;
+  /* Augmenter la taille du texte */
+  font-weight: 600;
+  /* Augmenter l'épaisseur de la police pour plus de présence */
+  color: #333;
+  text-decoration: none;
+  padding: 14px 25px;
+  /* Plus de padding pour une taille de bouton plus grande */
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Effet au survol du lien */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  /* Augmenter la hauteur de la ligne sous le lien */
+  background-color: #0f27af;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-link:hover {
+  color: #18064d;
+  /* Changer la couleur du texte au survol */
+}
+
+/* Menu déroulant "Mon compte" */
+.mon-compte-link {
+  padding: 15px;
+  font-size: 16px;
+  /* Plus grande taille de police */
+  font-weight: 600;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mon-compte-link:hover,
+.mon-compte-link:focus {
+  border-color: #010a54;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+  background-color: #f1faff;
+}
+
+/* Repositionner le formulaire pour les petits écrans */
+.custom-form {
+  display: inline-block;
+  margin-left: 30px;
+  /* Espacement plus large pour une meilleure disposition */
+}
+
+/* Effet d'animation sur tout le header */
+.header-container {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Animation d'entrée pour le header */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Pour les petits écrans, réduire les espaces */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 25px 0;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .login-form {
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .nav-pills {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mon-compte-link {
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+
+
+
+/**************** a propos***************************************/
+
+
+
+@keyframes fadeInMoveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    /* L'élément commence en bas */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    /* L'élément se place à sa position finale */
+  }
+}
+
+
+.styled-heading {
+  font-size: 2.4rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: normal;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 15px;
+  margin: 50px auto;
+  position: relative;
+  width: fit-content;
+  animation: fadeInMove 2s ease-out;
+}
+
+.styled-heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: #075795;
+}
+
+@keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+.about-container {
+  width: 90%;
+  margin: 5% auto;
+  padding: 60px 50px;
+  background: white;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  text-align: center;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #555;
+  line-height: 1.7;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInMoveUp 2s ease-out;
+}
+
+.about-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #061a81, transparent);
+}
+
+.about-container h1 {
+  font-size: 2.4rem;
+  font-weight: normal;
+  color: #333;
+  margin: 0 auto 30px;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.about-container h1::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: #075795;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  margin: 0 auto 25px;
+  text-align: center;
+  max-width: 700px;
+  color: #666;
+}
+
+.about-container strong {
+  color: #0c2485;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.about-container br {
+  margin-bottom: 15px;
+  display: block;
+  content: '';
+}
+
+/* Animation subtile */
+.about-container {
+  transition: all 0.4s ease;
+}
+
+.about-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(4, 31, 147, 0.12);
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 40px 25px;
+    margin: 10% 5%;
+  }
+
+  .about-container h1 {
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+  }
+
+  .about-container p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .about-container h1::after {
+    width: 60px;
+  }
+}
+
+
+/****************************************** */
+.reservation-page {
+  max-width: 100%;
+  margin: 0;
+  padding: 60px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  text-align: center;
+  background-color: #f9f8f6;
+  overflow-x: auto;
+  white-space: nowrap;
+  height: auto;
+}
+
+.reservation-page h1 {
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  white-space: normal;
+}
+
+.reservation-page h1:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: #20077b;
+}
+
+.reservation-page>p {
+  font-size: 1.3rem;
+  color: rgb(102, 102, 102);
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  white-space: normal;
+}
+
+.services-container {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 20px 0;
+}
+
+.service {
+  display: inline-block;
+  width: 280px;
+  height: 350px;
+  vertical-align: top;
+  margin: 0 15px;
+  padding: 30px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  white-space: normal;
+  transition: all 0.3s ease;
+}
+
+.service:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(210, 175, 55, 0.2);
+}
+
+.service img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.service h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: normal;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.service h3:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: #08056c;
+}
+
+.service p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Barre de défilement stylisée */
+.reservation-page::-webkit-scrollbar {
+  height: 8px;
+}
+
+.reservation-page::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.reservation-page::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+.reservation-page::-webkit-scrollbar-thumb:hover {
+  background: #c0a060;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .reservation-page {
+    padding: 40px 15px;
+  }
+
+  .reservation-page h1 {
+    font-size: 2rem;
+  }
+
+  .reservation-page>p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .service {
+    width: 260px;
+    padding: 25px;
+  }
+}
+
+/**********************   hotels  **************************************** */
+.hotel-container {
+  max-width: 1600px;
+  /* Augmentation de la largeur maximale */
+  margin: 0 auto;
+  padding: 60px 40px;
+  /* Augmentation du padding horizontal */
+  background: #f9f8f6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hotel-cards-header {
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 1600px;
+  /* Augmentation de la largeur maximale */
+  margin: 0 auto;
+}
+
+.hotel-container h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #333;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.hotel-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #007bff, #00bfff);
+}
+
+.hotel-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 colonnes égales */
+  gap: 30px;
+  padding: 30px 0;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.hotel-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+  min-width: 350px;
+  /* Largeur minimale pour chaque carte */
+}
+
+.hotel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.chambre-photo {
+  width: 100%;
+  height: 200px;
+  /* Hauteur réduite pour mieux s'adapter à 4 cartes */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hotel-card:hover .chambre-photo {
+  transform: scale(1.05);
+}
+
+.hotel-card h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 20px 20px 10px;
+  font-weight: 600;
+}
+
+.hotel-card p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0 20px 15px;
+  line-height: 1.6;
+}
+
+.hotel-card p:first-of-type {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.reserve-btn {
+  background: linear-gradient(to right, #acacac, #c1c1c1);
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px;
+  width: calc(100% - 40px);
+  font-weight: 500;
+}
+
+.reserve-btn:hover {
+  background: linear-gradient(to right, #0056b3, #0099cc);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Style amélioré pour les filtres */
+.chambre-filtres {
+  background: #acacac;
+  padding: 40px;
+  border-radius: 15px;
+  margin: 30px 0 50px;
+  box-shadow: 0 10px 30px rgba(26, 35, 126, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.chambre-filtres .buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.chambre-filtres .reserve-btn {
+  flex: 1;
+  max-width: 200px;
+  background: linear-gradient(to right, #040837, #051195);
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-align: center;
+}
+
+.chambre-filtres .reserve-btn:hover {
+  background: linear-gradient(to right, #130338, #07457f);
+}
+
+.chambre-filtres .reserve-btn[name="afficher"] {
+  background: linear-gradient(to right, #040837, #051195);
+}
+
+.chambre-filtres .reserve-btn[name="afficher"]:hover {
+  background: linear-gradient(to right, #130338, #07457f);
+}
+
+.chambre-filtres .row {
+  display: flex;
+  gap: 80px;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.chambre-filtres .col-md-6 {
+  flex: 1;
+  position: relative;
+}
+
+.chambre-filtres .form-label {
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.chambre-filtres .form-control,
+.chambre-filtres .form-select {
+  padding: 15px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+}
+
+.chambre-filtres .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.chambre-filtres .form-control:focus,
+.chambre-filtres .form-select:focus {
+  border-color: #ffd700;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+  outline: none;
+  color: #ffffff;
+}
+
+.chambre-filtres .form-control:hover,
+.chambre-filtres .form-select:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Style pour les options du select */
+.chambre-filtres .form-select option {
+  background-color: #9c9c9c;
+  color: #000000;
+  padding: 10px;
+}
+
+/* Titre de la section filtres */
+.chambre-filtres h3 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.chambre-filtres h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #ffd700;
+  border-radius: 3px;
+}
+
+/* Ajustement du responsive pour les filtres */
+@media (max-width: 992px) {
+  .chambre-filtres {
+    padding: 30px;
+  }
+
+  .chambre-filtres .row {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .chambre-filtres .col-md-6 {
+    width: 100%;
+  }
+
+  .chambre-filtres h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chambre-filtres {
+    padding: 25px;
+    margin: 20px 0 40px;
+  }
+
+  .chambre-filtres .form-control,
+  .chambre-filtres .form-select {
+    padding: 12px 15px;
+  }
+
+  .chambre-filtres h3 {
+    font-size: 1.3rem;
+  }
+
+  .chambre-filtres .buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chambre-filtres .reserve-btn {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/********************revie<**************************/
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #f9f8f6;
+  ;
+  height: 408px;
+  /* Légèrement agrandi pour plus de confort visuel */
+  padding: 20px 0;
+
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+  padding-left: 2rem;
+}
+
+.carousel-wrapper h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #343a40;
+  /* Couleur sombre élégante */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.carousel-wrapper h1::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #ffc107;
+  /* Jaune doré */
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+
+
+
+/* Animation du carrousel */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.reviews {
+  flex: 0 0 auto;
+}
+
+.review {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  height: 260px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.review:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.review i {
+  font-size: 2rem;
+  color: #ffca2c;
+  /* Jaune Bootstrap */
+  margin-right: 8px;
+}
+
+.review h5 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.review small {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.stars {
+  margin-top: 5px;
+}
+
+.stars i {
+  font-size: 1rem;
+}
+
+.review p {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+
+/******************************** style maps ****************************************** */
+
+/* Style élégant pour la section Contact */
+.contact.section {
+  width: 100%;
+  position: relative;
+  margin: 0;
+
+}
+
+.contact .container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Titre de la section */
+.contact .section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.contact .section-heading h6 {
+  font-size: 1.2rem;
+  color: #041427;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.contact .section-heading h6::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #1565c0;
+}
+
+.contact .section-heading h2 {
+  font-size: 2.8rem;
+  color: #0b2853;
+  font-weight: 700;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Style de la carte */
+#map {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+  position: relative;
+  height: 500px;
+}
+
+#map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 20px;
+}
+
+/* Styles pour les informations de contact */
+.contact-content .item {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.contact-content .item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-color: #1565c0;
+}
+
+.contact-content .item img {
+  width: 60px;
+  height: 60px;
+  margin-right: 25px;
+  padding: 12px;
+  background: #e3f2fd;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.contact-content .item:hover img {
+  background: #1565c0;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.contact-content .item h6 {
+  font-size: 1.2rem;
+  color: #0d47a1;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-content .item span {
+  font-size: 1rem;
+  color: #546e7a;
+}
+
+/* Formulaire */
+#contact-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Labels du formulaire */
+#contact-form label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0d47a1;
+  margin-bottom: 10px;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+  /* Pour chaque label sur une nouvelle ligne */
+}
+
+/* Champs du formulaire (input, textarea) */
+#contact-form input,
+#contact-form textarea {
+  width: 95%;
+  /* Prendre toute la largeur du parent */
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  font-size: 14px;
+  color: #333;
+  display: block;
+  /* Assure que les champs sont sur des lignes séparées */
+}
+
+/* Effet focus sur les champs */
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #007bff;
+  /* Bordure bleue au focus */
+  background: #fff;
+  outline: none;
+}
+
+/* Bouton de soumission du formulaire */
+#form-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  /* Bleu principal */
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+#form-submit:hover {
+  background-color: #0056b3;
+  /* Bleu plus foncé au survol */
+}
+
+/* Effet au clic du bouton */
+#form-submit:active {
+  background-color: #004085;
+  /* Bleu très foncé quand appuyé */
+}
+
+/* Mise en page de la carte et du formulaire côte à côte */
+.contact-content .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.contact-content .col-lg-7 {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.contact-content .col-lg-5 {
+  flex: 1;
+}
+
+/* Section des informations de contact à côté de la carte */
+.contact-content .col-lg-7 .row {
+  margin-top: 20px;
+}
+
+/* Espacement entre chaque élément dans le formulaire */
+.contact-content .row>div {
+  margin-bottom: 15px;
+}
+
+/* Ajout de la disposition verticale */
+#contact-form .row {
+  display: block;
+  /* Empêche les champs d'être sur la même ligne */
+}
+
+/* Section du formulaire : chaque champ sur une ligne */
+#contact-form .col-lg-12 {
+  margin-bottom: 15px;
+}
+
+/* Style pour les éléments du formulaire dans une disposition verticale */
+@media (max-width: 992px) {
+  .contact-content .row {
+    flex-direction: column;
+  }
+
+  .contact-content .col-lg-7,
+  .contact-content .col-lg-5 {
+    flex: 1 0 100%;
+    /* Chaque section prend la largeur complète sur les petits écrans */
+  }
+}
+
+/* Style spécifique pour les champs de téléphone et email */
+.contact-content .item.phone,
+.contact-content .item.email {
+  padding-left: 20px;
+  /* Pour aligner mieux avec l'icône */
+  background-color: #f7f9fc;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+}
+
+.contact-content .item.phone img,
+.contact-content .item.email img {
+  max-width: 40px;
+  /* Réduction de la taille de l'icône */
+  background-color: cadetblue;
+}
+
+.contact-content .item.phone h6,
+.contact-content .item.email h6 {
+  font-size: 16px;
+  color: #333;
+}
+
+.contact-content .item.phone span,
+.contact-content .item.email span {
+  font-size: 14px;
+  color: #777;
+}
+
+
+
+/***************** footer ****************************** */
+
+/* Footer Styling */
+.footer-container {
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  /* Même fond blanc que le header */
+  box-shadow: 0 -4px 6px rgba(255, 255, 255, 0.1);
+  /* Ombre en haut pour démarquer le footer */
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Footer Navigation */
+.footer-container .nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-container .nav-item {
+  list-style: none;
+}
+
+.footer-container .nav-link {
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 255);
+  color: #030637;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Copyright Text Styling */
+.footer-container p {
+  margin-top: 10px;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.reserve-btn {
+  background: linear-gradient(to right, #acacac, #c1c1c1);
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  font-weight: 500;
+}
+
+.reserve-btn:hover {
+  background: linear-gradient(to right, #0056b3, #0099cc);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Style pour le bouton Afficher toutes les chambres */
+.reserve-btn[name="afficher"] {
+  background: linear-gradient(to right, #28a745, #20c997);
+}
+
+.reserve-btn[name="afficher"]:hover {
+  background: linear-gradient(to right, #218838, #1ba87e);
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 768px) {
+  .buttons-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .reserve-btn {
+    width: 100%;
+  }
+}
